@@ -13,7 +13,8 @@ def json_definition(article):
 
 @app.route('/')
 def serve():
-    return send_from_directory(app.static_folder, 'index.html')
+    #return send_from_directory(app.static_folder, 'index.html')
+    return "hello world"
 
 @app.route('/api/article/<string:name>', methods=['GET'])
 def articles(name: str):
