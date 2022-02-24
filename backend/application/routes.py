@@ -1,6 +1,6 @@
 from re import L
 from app import app, db
-from flask import jsonify, request
+from flask import jsonify, render_template, request
 from flask.helpers import send_from_directory
 from backend.application.models import *
 
@@ -11,6 +11,10 @@ def json_definition(article):
 
     return result
 
+############# 
+#React routes
+############# 
+"""
 @app.route('/', methods=['GET'])
 def serve():
     return send_from_directory(app.static_folder, 'index.html')
@@ -26,7 +30,15 @@ def articles_list():
 @app.route('/article/<string:name>', methods=['GET'])
 def article(name: str):
     return send_from_directory(app.static_folder, 'index.html')
+"""
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def catch_all(path):
+    return render_template("index.html")
 
+############# 
+#API routes
+############# 
 @app.route('/api/article/<string:name>', methods=['GET'])
 def api_articles(name: str):
     article = Article.query.filter_by(name=name).first()
