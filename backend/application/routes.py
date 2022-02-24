@@ -14,26 +14,10 @@ def json_definition(article):
 ############# 
 #React routes
 ############# 
-"""
-@app.route('/', methods=['GET'])
-def serve():
-    return send_from_directory(app.static_folder, 'index.html')
-
-@app.route('/about', methods=['GET'])
-def about():
-    return send_from_directory(app.static_folder, 'index.html')
-
-@app.route('/articles-list', methods=['GET'])
-def articles_list():
-    return send_from_directory(app.static_folder, 'index.html')
-
 @app.route('/article/<string:name>', methods=['GET'])
 def article(name: str):
     return send_from_directory(app.static_folder, 'index.html')
-"""
 
-
-@app.route('/article/<string:name>', methods=['GET'])
 @app.route('/articles-list', methods=['GET'])
 @app.route('/about', methods=['GET'])
 @app.route('/', methods=['GET'])
