@@ -14,13 +14,15 @@ def json_definition(article):
 ############# 
 #React routes
 ############# 
+"""
 @app.route('/article/<string:name>', methods=['GET'])
 def article(name: str):
     return send_from_directory(app.static_folder, 'index.html')
-
+"""
 @app.route('/articles-list', methods=['GET'])
 @app.route('/about', methods=['GET'])
 @app.route('/', methods=['GET'])
+@app.route('/<path:path>')
 def catch_all():
     return send_from_directory(app.static_folder, 'index.html')
 
