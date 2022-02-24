@@ -11,24 +11,24 @@ def json_definition(article):
 
     return result
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def serve():
     return send_from_directory(app.static_folder, 'index.html')
 
-@app.route('/about')
+@app.route('/about', methods=['GET'])
 def about():
     return send_from_directory(app.static_folder, 'index.html')
 
-@app.route('/articles-list')
-def about():
+@app.route('/articles-list', methods=['GET'])
+def articles_list():
     return send_from_directory(app.static_folder, 'index.html')
 
-@app.route('/article/<string:name>')
-def about(name: str):
+@app.route('/article/<string:name>', methods=['GET'])
+def article(name: str):
     return send_from_directory(app.static_folder, 'index.html')
 
 @app.route('/api/article/<string:name>', methods=['GET'])
-def articles(name: str):
+def api_articles(name: str):
     article = Article.query.filter_by(name=name).first()
 
     if article:
