@@ -14,7 +14,7 @@ def json_definition(article):
 ############# 
 #React routes
 ############# 
-"""
+
 @app.route('/', methods=['GET'])
 def serve():
     return send_from_directory(app.static_folder, 'index.html')
@@ -30,6 +30,7 @@ def articles_list():
 @app.route('/article/<string:name>', methods=['GET'])
 def article(name: str):
     return send_from_directory(app.static_folder, 'index.html')
+
 """
 @app.route('/', methods=['GET'])
 @app.route('/about', methods=['GET'])
@@ -37,7 +38,7 @@ def article(name: str):
 @app.route('/article/<string:name>', methods=['GET'])
 def catch_all():
     return send_from_directory(app.static_folder, 'index.html')
-
+"""
 ############# 
 #API routes
 ############# 
