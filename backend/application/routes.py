@@ -31,9 +31,8 @@ def articles_list():
 def article(name: str):
     return send_from_directory(app.static_folder, 'index.html')
 """
-@app.route('/', defaults={'path1': '', 'path2': ''})
-@app.route('/<path:path1>', defaults={'path2': ''})
-@app.route('/<path:path1>/<path:path2>')
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
 def catch_all(path):
     return send_from_directory(app.static_folder, 'index.html')
 
