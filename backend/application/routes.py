@@ -15,6 +15,10 @@ def json_definition(article):
 def serve():
     return send_from_directory(app.static_folder, 'index.html')
 
+@app.route('/about')
+def about():
+    return send_from_directory(app.static_folder, 'index.html')
+
 @app.route('/api/article/<string:name>', methods=['GET'])
 def articles(name: str):
     article = Article.query.filter_by(name=name).first()
@@ -70,17 +74,17 @@ def db_drop():
 def db_seed():
     article1 = Article(
         name="learn-react",
-        upVotes=5
+        upVotes=0
     )
 
     article2 = Article(
         name="learn-node",
-        upVotes=6
+        upVotes=0
     )
 
     article3 = Article(
         name="my-thoughts-on-resumes",
-        upVotes=10
+        upVotes=0
     )
 
     comment1 = Comment(
