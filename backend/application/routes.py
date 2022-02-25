@@ -19,13 +19,10 @@ def json_definition(article):
 def article(name: str):
     return send_from_directory(app.static_folder, 'index.html')
 """
-#@app.route('/articles-list', methods=['GET'])
-#@app.route('/about', methods=['GET'])
-#@app.route('/', methods=['GET'])
-
+#@app.route("/<string:path>")
 
 @app.route('/', defaults={"path": "", "path2": ""})
-@app.route("/<string:path>")
+@app.route('/<string:path>', defaults={'path2': ''})
 @app.route("/<string:path>/<string:path2>")
 def catch_all(path, path2):
     return send_from_directory(app.static_folder, 'index.html')
