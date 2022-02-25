@@ -11,16 +11,9 @@ def json_definition(article):
 
     return result
 
-############# 
-#React routes
-############# 
-"""
-@app.route('/article/<string:name>', methods=['GET'])
-def article(name: str):
-    return send_from_directory(app.static_folder, 'index.html')
-"""
-#@app.route("/<string:path>")
-
+#################
+#Catch all routes
+#################
 @app.route('/', defaults={"path": "", "path2": ""})
 @app.route('/<string:path>', defaults={'path2': ''})
 @app.route("/<string:path>/<string:path2>")
