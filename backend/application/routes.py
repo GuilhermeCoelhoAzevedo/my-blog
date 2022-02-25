@@ -26,7 +26,7 @@ def article(name: str):
 @app.route('/', defaults={"path": ""})
 @app.route("/<string:path>")
 @app.route('/<path:path>')
-def catch_all():
+def catch_all(path):
     return send_from_directory(app.static_folder, 'index.html')
 
 ############# 
