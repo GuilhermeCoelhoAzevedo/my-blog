@@ -1,23 +1,23 @@
-# Website:
+## Website:
 
 https://gui-blog.herokuapp.com/
 
 # Back-end 
 
-# To install
+## To install
 
 To install the requirements of the project, execute:
 
 ### `pip install -r requirements.txt`
 
-# To create database
+## To create database
 
 To create the database and seed, execute:
 
 ### `flask db_create`
 ### `flask db_seed`
 
-# To run
+## To run
 
 To run the Flask project, execute:
 
